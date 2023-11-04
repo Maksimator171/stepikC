@@ -1,0 +1,28 @@
+Дано натуральное число N. Выведите слово YES, если число N является точной степенью двойки, или слово NO в противном случае.
+
+  #include <iostream>
+using namespace std;
+int main() {
+   int N;
+    cin >> N;
+    
+    if (N%2==0) {while((N!=2) && (N%2==0)) {N=N/2; continue;} }
+    if (N==2 || N==1) {cout << "YES";}  
+    else {cout << "NO";}
+    
+    
+  return 0;
+}
+
+Последовательность состоит из натуральных чисел и завершается числом 0. Определите значение наибольшего элемента последовательности.
+
+  #include <iostream>
+using namespace std;
+int main() {
+ int N;
+    cin >> N;
+    int b=N;
+    while (N!=0) { if(N>b){b=N;} cin >> N; continue;}
+    cout << b;
+  return 0;
+}
