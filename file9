@@ -1,0 +1,25 @@
+Есть две коробки, первая размером A1×B1×C1, вторая размером A2×B2×C2. Определите, можно ли разместить одну из этих коробок внутри другой, при условии, что поворачивать коробки можно только на 90 градусов вокруг ребер.
+
+#include <iostream>
+using namespace std;
+int main() {
+  int A1, B1, C1, A2, B2, C2;
+    cin >> A1 >> B1 >> C1 >> A2 >> B2 >> C2;
+    int a=B1;
+    int b=C1;
+
+    int a2=B2;
+    int b2=C2;
+    
+    if (A1 <= B1) { B1=A1; A1=a;}
+    if (B1 <= C1) { C1=B1; B1=b;}
+    if (A1 <= b)  {B1=A1; A1=b;}
+    if (A2 <= B2) { B2=A2; A2=a2;}
+    if (B2 <= C2) { C2=B2; B2=b2;}
+    if (A2 <= b2)  {B2=A2; A2=b2;}
+    if ((A1 == A2) && (B1==B2) && (C1==C2)) {cout << "Boxes are equal";}
+    else if (A1 >= A2 && B1 >= B2 && C1 >= C2) {cout << "The first box is larger than the second one";}
+    else if (A1 <= A2 && B1 <= B2 && C1 <= C2) {cout << "The first box is smaller than the second one";}
+    else {cout << "Boxes are incomparable";}
+  return 0;
+}
